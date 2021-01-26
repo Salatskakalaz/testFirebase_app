@@ -11,10 +11,16 @@ class _LandingPageState extends State<LandingPage> {
 
   FirebaseUser _user;
 
+  void _updateUser(FirebaseUser user) {
+      print('User id: ${user.uid}');
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_user == null) {
-      return SignInPage();
+      return SignInPage(
+        onSignIn: (user) => _updateUser(user)
+      );
     }
     return Container(); // temporary placeholder for HomePage
   }
