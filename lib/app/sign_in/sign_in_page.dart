@@ -4,11 +4,13 @@ import 'sign_in_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInPage extends StatelessWidget {
+  SignInPage({@required this.onSignIn});
+  final Function(FirebaseUser) onSignIn;
 
   Future <void> _signInInAnonymously() async {
     try {
       final authResult = await FirebaseAuth.instance.signInAnonymously();
-      print('${authResult.user.uid}');
+      onSignIn(authResult.user);
     }catch (e) {
       print(e.toString());
     }
