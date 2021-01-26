@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Time Tracker',
         theme: ThemeData(primaryColor: Colors.indigo),
-        home: LandgingPage());
+        home: LandingPage());
   }
 }
