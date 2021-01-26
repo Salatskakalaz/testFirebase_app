@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/app/sign_in/sign_in_page.dart';
 
+import 'home_page.dart';
+
 class LandingPage extends StatefulWidget {
   @override
   _LandingPageState createState() => _LandingPageState();
@@ -24,6 +26,6 @@ class _LandingPageState extends State<LandingPage> {
         onSignIn: (user) => _updateUser(user)
       );
     }
-    return Container(); // temporary placeholder for HomePage
+    return HomePage();
   }
 }
